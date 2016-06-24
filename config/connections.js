@@ -18,7 +18,9 @@
  * For more information on configuration, check out:
  * http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.connections.html
  */
-
+ var URL = require('url');
+ var connectionDb = process.env.CONNECTION_URL || "http://localhost:27017";
+ var url = URL.parse(connectionDb);
 module.exports.connections = {
 
   /***************************************************************************
@@ -89,11 +91,12 @@ module.exports.connections = {
   *                                                                          *
   ***************************************************************************/
   //https://github.com/codeswarm/sails-couchdb-orm
-  couch: {
-    adapter: 'sails-couchdb-orm',
-    host: 'localhost',
-    port: 5984,
-    username: 'myuser',
-    password: 'mypassword'
+  mongodb: {
+    adapter		: 'sails-mongo',
+    host			: url && url.hostname,
+    port			: url && url.port,
+    username	: process.env.CONNECTION_USERNAME || 'admin',
+    password	: process.env.CONNECTION_PASSWORD || 'party',
+    database	: process.env.CONNECTION_DATABASE || 'cutecms_db'
   }
 };

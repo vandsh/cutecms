@@ -116,3 +116,9 @@ npm-debug.log
 nbproject
 .idea
 .node_history
+
+#######################################
+#mongo local-dev setup
+######################################
+cutecms_db/*
+mongo-cutecms.bat

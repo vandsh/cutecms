@@ -11,7 +11,7 @@
 
 module.exports.models = {
   //Use couch for all models
-  connection: 'couch'
+  connection: 'mongodb',
   /***************************************************************************
   *                                                                          *
   * Your app's default connection. i.e. the name of one of your app's        *
@@ -28,6 +28,6 @@ module.exports.models = {
   * See http://sailsjs.org/#!/documentation/concepts/ORM/model-settings.html  *
   *                                                                          *
   ***************************************************************************/
-  // migrate: 'alter'
+   migrate: 'drop'
 
 };
