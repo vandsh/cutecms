@@ -6,6 +6,11 @@
  */
 
 module.exports = {
-	
-};
 
+	get:function(req, res){
+			Layout.findOne(req.param('id')).exec(function (err, layouts){
+				return res.json(layouts);
+		});
+	},
+
+};

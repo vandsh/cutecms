@@ -6,6 +6,11 @@
  */
 
 module.exports = {
-	
-};
+	get:function(req, res){
+			FieldInstance.findOne(req.param('id')).populate('type').exec(function (err, fieldInstance){
+				fieldInstance.render(res);
+				//return res.json(fieldInstance.type.layout);
+		});
+	},
 
+};

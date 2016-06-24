@@ -8,10 +8,9 @@
 module.exports = {
 
   attributes:{
-    id: {
-      autoIncrement: true,
-      type: 'integer',
-      primaryKey: true
+    parent: {
+      model: 'ItemTemplate',
+      required: false
     },
 		name:{
 			type:'string',
@@ -24,6 +23,10 @@ module.exports = {
 		layout:{
 			model: 'Layout',
       required: false
-		}
+		},
+    children:{
+      collection: 'ItemTemplate',
+      via: 'parent'
+    },
 	}
 };

@@ -8,16 +8,16 @@
 module.exports = {
 
   attributes:{
-    id: {
-      autoIncrement: true,
-      type: 'integer',
-      primaryKey: true
-    },
     type:{
       model:'FieldType',
     },
     template:{
       model: 'ItemTemplate',
+    },
+    render: function(cb){
+      Layout.findOne(this.type.layout).exec(function (err, layout){
+  				cb.view(layout.template);
+  		});
     }
   }
 };
