@@ -8,6 +8,13 @@
 module.exports = {
 
   attributes:{
+    name:{
+      type:'string',
+      required: true
+    },
+    value:{
+      type:'string',
+    },
     type:{
       model:'FieldType',
     },
@@ -15,8 +22,9 @@ module.exports = {
       model: 'ItemTemplate',
     },
     render: function(cb){
+      data = this;
       Layout.findOne(this.type.layout).exec(function (err, layout){
-  				cb.view(layout.template);
+  				cb.view(layout.template, {model: data});
   		});
     }
   }
