@@ -1,0 +1,50 @@
+<h3><%= model.length %> Fields</h3>
+
+<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+
+<% model.forEach(function(subModel, index){%>
+
+  <tr>
+    <td><%= subModel.name %></td>
+    <td><%= subModel.type %></td>
+    <td>
+        <a href="fieldType/edit/<%= subModel.id%>">
+          <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--mini-fab">
+            <i class="material-icons">edit</i>
+          </button>
+        </a>
+        <a href="fieldType/delete/<%= subModel.id%>">
+          <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--mini-fab">
+            <i class="material-icons">delete</i>
+          </button>
+        </a>
+    </td>
+  </tr>
+
+<% });  %>
+
+  <tr>
+  <td>
+  </td>
+  <td>
+    <span>Add New Field</a>
+  </td>
+  <td>
+      <a href="/fieldType/create">
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+          <i class="material-icons">add</i>
+        </button>
+      </a>
+  </td>
+  </tr>
+
+</ul>
+

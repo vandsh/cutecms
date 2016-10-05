@@ -6,6 +6,15 @@
  */
 
 module.exports = {
-	
+    viewAll:function(req, res){
+			FieldType.find().exec(function (err, fieldTypes){
+			return res.view({model: fieldTypes});
+		});
+	},
+    create:function(req, res){
+            FieldType.find().exec(function (err, fieldTypes){
+            return res.view({model: fieldTypes});
+        });
+	},
 };
 

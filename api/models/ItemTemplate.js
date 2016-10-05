@@ -38,7 +38,7 @@ module.exports = {
     },
     render: function(cb){
       data = this;
-      Layout.findOne(this.type.layout).exec(function (err, layout){
+      Layout.findOne(this.layout).exec(function (err, layout){
         Layout.findOne(this.type.mainLayout).exec(function (err, mainLayout){
             cb.view(layout.template, {layout:mainLayout.template, model: data});
         });

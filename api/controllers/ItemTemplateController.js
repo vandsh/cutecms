@@ -33,7 +33,7 @@ module.exports = {
 
 			Layout.create({
 				name:'Field Layout',
-				template: 'field.ejs'
+				template: 'userdefined/field.ejs'
 			}).exec(function createCB(err1, fieldLayout){
 				if (err1) {
 					console.log('Error: ' + err1);
@@ -43,7 +43,7 @@ module.exports = {
 
 				Layout.create({
 					name:'Item Layout',
-					template: 'field.ejs'
+					template: 'userdefined/field.ejs'
 				}).exec(function createCB(err2, itemLayout){
 					if (err2) {
 						console.log('Error: ' + err2);
