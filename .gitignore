@@ -121,4 +121,4 @@ nbproject
 #mongo local-dev setup
 ######################################
 cutecms_db/*
-mongo-cutecms.bat
+#mongo-cutecms.bat
